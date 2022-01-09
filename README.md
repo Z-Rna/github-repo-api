@@ -253,4 +253,4 @@ python -m unittest discover
 * add more unit tests,
 * add continuous integration with GitHub repository ,
 * add showing more information about repository, 
-* add saving encrypted GitHub API and decrypted while user wants use it
+* add saving encrypted GitHub API token and decrypted while user wants use it
