@@ -14,7 +14,7 @@ api = Api(
     title='Github Repo Api',
     version='1.0',
     description='Get information about users repositories on Github',
-    doc='/swagger',
+    doc='/api',
     default_label='Options'
 )
 
@@ -50,7 +50,7 @@ def home() -> dict:
                 'method': 'POST'
             },
             'swagger documentation': {
-                'endpoint': f'{url}/swagger',
+                'endpoint': f'{url}/api',
                 'method': 'GET'
             },
         }
@@ -76,7 +76,7 @@ class RouteStars(Resource):
         res = jsonify(d.to_dict())
         return res
 
-@api.route("/languages/<user>", methods=["GET"], doc={"description": "Get number of stars for given user"})
+@api.route("/languages/<user>", methods=["GET"], doc={"description": "Get number of bytes for the most popular programing languages"})
 class RouteLanguages(Resource):
     def get(self, user: str) -> dict:
         d = Languages(user)

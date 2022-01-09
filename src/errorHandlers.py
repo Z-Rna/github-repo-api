@@ -1,4 +1,3 @@
-# from route import app, jsonify
 from src import app
 from flask import  jsonify
 from werkzeug.exceptions import HTTPException

@@ -26,14 +26,13 @@ class Languages(GetData):
                 response = requests.get(url, headers=headers)
                 response.raise_for_status()
             except requests.exceptions.HTTPError as e:
-                response = jsonify({
+                res = {
                     "code": response.status_code,
                     "name": requests.status_codes._codes[response.status_code][0],
                     "description": response.reason,
                     "source": "GitHub API"
-                })
-                response.status_code = e.response.status_code
-                abort(make_response(response))
+                }
+                abort(response.status_code, res)
             else:
                 if response.json():
                     sorted_response = dict(sorted(response.json().items(),
