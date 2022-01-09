@@ -204,7 +204,7 @@ GET http://127.0.0.1:5000/wrong
 There is three sources of errors:
 * <b>Server application: HTTP error</b> - errors caused by HTTP protocol at local server: e.g. wrong endpoint,
 * <b>Server application: python error</b> - errors caused by implementation: e.g. wrongly imported module,
-* <b>"GitHub API"</b> - errors returned by GitHub API, e.g wrong user.
+* <b>GitHub API</b> - errors returned by GitHub API, e.g wrong user.
 ## Project structure
 * <code>src/</code>
   * <code>Data.py</code> - class file for class Data,
@@ -246,7 +246,7 @@ python -m unittest discover
 
 ## Limits
 * GitHub API responses are paged at size of 100, thus to get every repository of given user owing over 100 repositories, a couple of iterations are made,
-* GitHub API allows hourly for 60 API calls,
+* GitHub API allows for 60 API calls per hour,
 * Post [OAuth](https://docs.github.com/en/rest/overview/other-authentication-methods#via-oauth-and-personal-access-tokens) token via <code>POST http://127.0.0.1:5000/token/new_token </code>to increase limit.
 
 ## Improvement suggestions
