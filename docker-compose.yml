@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  github-repo-api:
+    build:
+      context: .
+      dockerfile: github-repo-api.dockerfile
+    env_file:
+      - .env
+    container_name: ${APP_CONTAINER_NAME}
+    ports:
+      - "${APP_PORT}:5000"
+    command: ["flask", "run"]
+    restart: unless-stopped
